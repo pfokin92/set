@@ -13,7 +13,7 @@ test('Add char first time', ()=>{
 test('Add char second time', ()=>{
     const team = new Team();
     team.add('swordsman');
-    expect(team.add('swordsman')).toThrowError(new Error('Объект уже существует в команде'))
+    expect(()=>team.add('swordsman')).toThrow();
 });
 
 test('Add all chars', ()=>{
@@ -24,5 +24,5 @@ test('Add all chars', ()=>{
 
 test('Add all chars double', ()=>{
     const team = new Team();
-    expect(team.addAll('swordsman','deamon','bowman','swordsman')).toThrowError(new Error('Объект уже существует в команде'))
+    expect(()=>team.addAll('swordsman','deamon','bowman','swordsman')).toThrow();
 });
